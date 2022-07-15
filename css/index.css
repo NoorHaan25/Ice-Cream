@@ -9,6 +9,8 @@
 :root{
     --main-purple-color:#9e53b6;
     --main-yellow-color:#f2e20b;
+    --padding-top:50px;
+    --padding-bottom:50px;
 }
 /* Responsive */
 @media (min-width:768px) {
@@ -24,6 +26,7 @@
 @media (min-width:1200px) {
     .container{
         width: 1170px;
+        : ;
     }
 }
 html{
@@ -50,6 +53,9 @@ body{
 }
 /* small & medium screen */
 @media (max-width:991px) {
+    .header{
+        padding-bottom: 0;
+    }
     .header .container{
         display: flex;
         justify-content: space-between;
@@ -68,14 +74,13 @@ body{
         font-size: 30px;
     }
     .header .container .small-phone{
-        top: 128%;
         position: absolute;
+        transform: translateX(-50%);
+        top: 100%;
         left: 50%;
+        width: 100%;
         text-align: center;
         background-color: #9e53b6;
-        width: 100%;
-        transform: translateX(-50%);
-        /* height: 0; */
         transition: 2s;
         display: none;
         z-index: 2;
@@ -88,7 +93,6 @@ body{
     }
     .header .container .bar:hover + ul{
         display: block;
-        /* height: 420px; */
     }
 }
 /* Big screen */
@@ -265,3 +269,66 @@ body{
     background-color: var(--main-yellow-color);
     cursor: pointer;
 } 
+/* About */
+.About{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+.About .container > h1{
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 39px;
+    
+}
+.About .container .Feature{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(278px ,1fr));
+    gap: 30px;
+}
+.About .container .Feature .img img{
+    max-width: 100%;
+    border-radius: 20px;
+}
+.About .container .Feature .about h1 , .about .container .Feature .feature h1{
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+.About .container .Feature .about p:nth-child(2){
+    padding-bottom: 15px;
+    font-weight: bold;
+    color: gray;
+    font-size: 20px;
+}
+.About .container .Feature .about p:nth-child(3){
+    color: #000000ba;
+}
+.About .container .Feature .about ,.About .container .Feature .feature{
+    padding-top: 40px;
+}
+.About .container .Feature .feature p{
+    padding-bottom: 15px;
+    color: #000000ba;
+}
+.About .container .Feature .feature ul li{
+    color: gray;
+    font-size: 20px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.About .container .Feature .feature ul li::before{
+    content: "\f00c";
+    font-family: 'Font Awesome 5 free';
+    font-weight: bold;
+    color: var(--main-purple-color);
+    padding-right: 10px;
+}
+.About .container .Feature .feature input , .About .container .Feature .about input{
+    padding: 13px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--main-purple-color);
+    font-size: 15px;
+    color: white;
+    margin: 10px 0;
+    font-weight: bold;
+}
