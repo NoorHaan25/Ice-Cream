@@ -45,6 +45,11 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.container > h1{
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: var(--padding-bottom);
+}
 /* Header */
 .header{
     background-color: var(--main-purple-color);
@@ -275,12 +280,6 @@ body{
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-bottom);
 }
-.About .container > h1{
-    text-align: center;
-    padding-bottom: 50px;
-    font-size: 39px;
-    
-}
 .About .container .Feature{
     display: grid;
     grid-template-columns: repeat(auto-fill , minmax(278px ,1fr));
@@ -340,7 +339,7 @@ body{
 }
 @media (max-width:991px){
     .promotion{
-        grid-template-columns: repeat(auto-fill , minmax(382px , 1fr));
+        grid-template-columns: repeat(auto-fill , minmax(309px , 1fr));
     }
 }
 .promotion .video{
@@ -443,10 +442,6 @@ body{
     padding-bottom: var(--padding-bottom);
     background-color: var(--background-sections);
 }
-.Service .container h1{
-    line-height: 1.2;
-    text-align: center;
-}
 .Service .container .services{
     padding-top: var(--padding-top);
     display: grid;
@@ -514,3 +509,46 @@ body{
     color: var(--main-yellow-color);
     font-weight: bold;
 }
+/* Gallery */
+.Gallery{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+.Gallery .container{
+    position: relative;
+}
+.Gallery .container .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+}
+@media (max-width:991px) {
+    .Gallery .container .gallery{
+        grid-template-columns: repeat(auto-fill , minmax(266px , 1fr));
+    }
+}
+.Gallery .container .gallery .img{
+    position: relative;
+    overflow: hidden;
+}
+.Gallery .container .gallery .img::after{
+    content: '';
+    position: absolute;
+    border: 2px solid white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 80%;
+}
+.Gallery .container .gallery .img:hover img{
+    transform: scale(1.3);
+    transition: 0.6s;
+}
+.Gallery .container .gallery .img img{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+/* padding-top: var(--padding-top);
+padding-bottom: var(--padding-bottom); */
